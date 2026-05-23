@@ -1,16 +1,18 @@
 import configparser
+from pathlib import Path
 
 config = configparser.RawConfigParser()
-config.read(".\\config\\config.ini")
+config_path = Path(__file__).resolve().parents[1] / "Config" / "config.ini"
+config.read(config_path)
 
-class ReadBrowser():
+class ReadBrowser:
 
     @staticmethod
     def getbrowser():
         browser = config.get('browser info', 'browser')
         return browser
     
-class ReadConfig():
+class ReadConfig:
     @staticmethod
     def getURL():
         url = config.get('common info', 'baseURL')

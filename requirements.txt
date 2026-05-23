@@ -1,0 +1,7 @@
+requests
+selenium
+pytest
+pytest-html
+pytest-metadata
+pandas
+openpyxl
