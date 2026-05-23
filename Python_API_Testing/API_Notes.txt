@@ -1,0 +1,36 @@
+// API ===> application programming interface
+
+==>verify that it fulfills its expected functionality, security, performance and reliability.
+
+method == > GET, POST, PUT, DELETE, PATCH
+// GET == > retrieve data from a server     
+// POST == > send data to a server to create a resource
+// PUT == > send data to a server to update a resource
+// DELETE == > remove a resource from a server
+// PATCH == > apply partial modifications to a resource
+// API testing == > is a software testing practice that involves testing APIs directly and as part of integration testing to 
+determine if they meet expectations for functionality, reliability, performance, and security.
+
+Header == > is a key-value pair sent in the request to provide additional information about the request or response.
+// Body == > is the data sent in the request or response, typically in JSON or XML format.
+// URL == > is the address of the API endpoint being accessed.
+// Endpoint == > is a specific URL that corresponds to a specific function or resource in the API.
+// Response == > is the data returned by the API after processing the request, typically in JSON or XML format.
+// Status code == > is a three-digit number returned by the server to indicate the result of the request, such as 200 for success or 404 for not found.
+// API testing tools == > Postman, SoapUI, JMeter, RestAssured, Karate, etc.
+
+
+
+========================================================================================================================
+In software testing, assertions are statements used to verify expected outcomes, and they come in various formats and types, 
+including hard assertions (stop test execution on failure) and soft assertions (continue execution even on failure). 
+
+Types of Assertions:
+Hard Assertions:
+These assertions cause the test to fail and stop execution if the assertion condition is not met. 
+Common examples include assertEquals(), assertTrue(), assertFalse(), assertNull(), and assertNotNull(). 
+
+Soft Assertions:
+These assertions allow the test to continue execution even if the assertion condition fails. 
+They are useful for verifying multiple conditions in a test case without prematurely stopping the test. 
+The assertAll() method can be used for soft assertions

@@ -1,0 +1,139 @@
+HomeADB Commands
+adb shell getprop
+adb shell getprop
+
+Get Android system properties info.
+
+
+
+adb shell getprop ro.build.version.sdk
+
+Get SDK API level.
+
+
+
+adb shell getprop ro.build.version.security_patch
+
+Get Android security patch version.
+
+
+
+adb shell getprop ro.board.platform
+
+Get Soc info.
+
+
+
+adb shell getprop ro.build.version.release
+
+Get Android version info.
+
+  
+
+adb shell getprop ro.vendor.product.model
+
+Get Android device model.
+
+
+
+adb shell getprop ro.product.manufacturer
+
+Get Android device manufacturer.
+
+ 
+
+adb shell getprop ro.serialno
+
+Get ADB serial number.
+
+
+
+adb shell getprop ro.oem_unlock_supported
+
+Get OEM unlock status.
+
+
+
+adb shell getprop ro.bootimage.build.fingerprint
+
+Get Android device build fingerprint.
+
+
+
+adb shell getprop ro.boot.wifimacaddr
+
+Get WiFi MAC Address
+HomeADB Commands
+adb shell settings
+adb shell settings list system
+
+Android Settings provider (system namespace)
+
+
+
+adb shell settings get system volume_system
+
+Get current system volume level in Android.
+
+
+
+adb shell settings get system notification_sound
+
+Get current system notification sound in Android.
+
+ 
+
+adb shell settings list secure
+
+Android Settings provider (secure namespace)
+
+
+
+adb shell settings get secure android_id
+
+Find Android Device Identifier(Device Id)
+
+
+
+adb shell settings get secure bluetooth_address
+
+Find Bluetooth MAC address in android.
+
+ 
+
+adb shell settings list global
+
+Android Settings provider (global namespace)
+
+
+
+adb shell settings get global mobile_data
+
+Get current mobile data status in Android.
+
+
+
+adb shell settings get global wifi_on
+
+Get current WiFi status in Android.
+HomeADB Commands
+adb sideload
+adb shell getprop
+adb shell dumpsys iphonesubinfo
+adb shell settings
+adb shell wm
+adb shell dumpsys battery
+adb shell pm
+adb shell input keyevent
+adb shell input text
+adb shell input tap
+adb shell cat
+adb shell top
+adb shell ifconfig
+adb shell screenrecord
+adb shell screencap
+adb shell mount
+adb shell date
+adb shell netstat
+adb shell ps
+adb install

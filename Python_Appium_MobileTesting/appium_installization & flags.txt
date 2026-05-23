@@ -1,0 +1,41 @@
+Appium install with Windows witg CMD:
+-------------------------------------
+1.install Node.js
+2.install appium with cmd ---> npm install -g appium@1.22.3--> for appium 1.0
+3.npm install -g appium-doctor
+
+4--> set Android sdk and JAVA_HOME in envinormental variables
+   --> for Android u need to setup tools and platform-tools(its for adb)
+5-->
+###########################*******Tools******#################################
+For Android: JDK, Android SDK, Appium, Node.js, UIAutomator2, ADB
+For iOS: Xcode, Carthage, WebDriverAgent, Appium, Homebrew
+Common: Appium Server, Appium Client Libraries
+
+###############################*********Inspect*********###################
+
+ How do you inspect elements in Appium?
+
+For Android: Use UIAutomatorViewer or Appium Inspector.
+For iOS: Use Xcode’s Accessibility Inspector or Appium Inspector.
+
+##############################################################################################################
+Appium Flages:
+
+--address: Specifies the IP address on which the server will run.
+--port: Defines the port number the server will listen to.
+--session-override: Allows the server to override existing sessions when a new one starts.
+--no-reset: Prevents clearing app data between test sessions.
+--log-level: Sets the verbosity of server logs (e.g., info, debug, error).
+--log-timestamp: Toggles timestamps in log outputs for better tracking.
+--relaxed-security: Enables less restrictive security settings for testing purposes.
+--default-capabilities: Defines default session settings when none are provided.
+
+
+
+###################################################################################################################
+
+Appium Server: A Node.js-based server that receives requests and interacts with the mobile device.
+Appium Client: The code written in Java, Python, or other languages that sends commands to the Appium Server.
+
+###################################################################################################

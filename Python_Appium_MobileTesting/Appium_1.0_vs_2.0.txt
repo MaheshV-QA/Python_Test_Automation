@@ -1,0 +1,24 @@
+**Comparison of Appium 1.0 and Appium 2.0**
+
+| **Feature**        | **Appium 1.0**                                 | **Appium 2.0**                                    |
+|--------------------|----------------------------------------------- |---------------------------------------------------|
+| **Architecture**   |Monolithic architecture—comes with all required |Modular architecture—drivers and plugins must be   |
+|                    |  drivers (Android, iOS, Windows) pre-installed.| installed separately as needed. This makes Appium |
+|                    |                                                |lightweight and flexible.
+-----------------------------------------------------------------------------------------------------------------------------
+| **Installation**   | Installed using a single command:               |Requires separate installation of Appium core and drivers:
+                     |  <br> ```npm install -g appium```               | <br> ```npm install -g appium@next``` <br> Then,
+                     |                                                 | install drivers as needed,
+                     |                                                 | e.g., <br> ```appium driver install uiautomator2``` for Android 
+                     |                                                 |<br> ```appium driver install xcuitest``` for iOS. | 
+------------------------------------------------------------------------------------------------------------------------------------------------                                                  
+| **Plugin Support**    | No official plugin support. All features are built-in. | Supports plugins to extend functionality, such as AI-driven testing, image recognition, and custom commands. Users can install and create their own plugins. |
+| **CLI Commands**      | Uses a fixed set of commands with no extensibility. Users are limited to built-in functionalities. | More flexible command-line interface (CLI). Supports custom commands via plugins and allows better debugging and configuration options. |
+| **API Compliance**    | Uses both JSON Wire Protocol (legacy) and partial W3C WebDriver Protocol. Some older capabilities are not fully compatible with new WebDriver standards. | Fully follows the **W3C WebDriver Protocol**, making it more compatible with modern automation frameworks. Deprecated capabilities from Appium 1.0 are removed. |
+
+### **Key Takeaways**
+- **Appium 2.0 is more modular**, requiring separate installation of drivers and plugins.
+- **Installation and setup are different**, as drivers are installed separately in Appium 2.0.
+- **More flexibility** with plugins and CLI commands in Appium 2.0.
+- **Better compliance** with W3C WebDriver, ensuring long-term stability.
+

@@ -1,0 +1,2 @@
+Appium Server: A Node.js-based server that receives requests and interacts with the mobile device.
+Appium Client: The code written in Java, Python, or other languages that sends commands to the Appium Server.

@@ -1,0 +1,48 @@
+5. How does Python’s Global Interpreter Lock (GIL) impact multi-threading?
+
+The Global Interpreter Lock (GIL) is a mechanism that prevents multiple native threads from executing Python bytecodes simultaneously. 
+This means that even if I use multi-threading in my Python program, only one thread can execute at a time. 
+The GIL ensures thread safety, but it also limits the performance of multi-threaded Python programs, 
+especially when working with CPU-bound tasks.
+
+Because of the GIL, threads in Python don’t run in true parallel, which can be a disadvantage for CPU-intensive operations. 
+For example, if I have a task that requires heavy computation, using threads won’t speed up the process, 
+as only one thread can execute at any given time. However, the GIL doesn’t affect I/O-bound tasks, 
+such as reading from a file or making network requests. In these cases, multi-threading can still be beneficial since 
+threads can switch when one is waiting for I/O.
+
+To overcome the limitations of the GIL for CPU-bound tasks, I can use multiprocessing instead of threading. 
+The  multiprocessing  module creates separate processes, each with its own Python interpreter and memory space, 
+allowing true parallelism. This way, I can take full advantage of multi-core CPUs and improve the performance of 
+my Python programs in scenarios that require heavy computation.
+=======================================================================================================================================
+Multi-threading is suitable for I/O-bound tasks like file reading, network requests, or database operations,
+
+For multi-threading, I use the  threading  module. Here’s a simple example:
+
+import threading
+
+def print_numbers():
+    for i in range(5):
+        print(i)
+
+thread = threading.Thread(target=print_numbers)
+thread.start()
+thread.join()
+
+===============================================================================================================================================
+
+while multi-processing is better for CPU-bound tasks that require heavy computation, 
+as it bypasses Python’s Global Interpreter Lock (GIL).
+
+For multi-processing, I use the  multiprocessing  module, which creates separate processes with their own memory space:
+
+import multiprocessing
+
+def square_numbers():
+    for i in range(5):
+        print(i * i)
+
+process = multiprocessing.Process(target=square_numbers)
+process.start()
+process.join()

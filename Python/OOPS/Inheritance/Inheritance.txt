@@ -1,0 +1,57 @@
+Inheritance (or) IS‐A relationship :
+-----------------------------------
+==> One class acquiring the properties of another class is called as Inheritance.
+
+==>⦁ Here properties is defined as methods and variables.
+
+==>extends is a keyword which indicates that we are creating a new class from an existing class.--in JAVA
+
+==>The class whose properties are acquired is called as super class or parent class or Base class.
+
+==>The class who is acquiring the properties is called as child class or Sub clas or derive class.
+=============================================================================================================================
+
+Note:
+‐‐‐‐‐
+==> Only Non static methods can be inherited, static methods cannot be inherited because they will get loaded only once in SAP.
+
+==>Constructors cannot be inherited because they are not a member of class,they are just used to initialise a Non static variable.
+
+==>If we create Object of super class, we can access only super class methods.
+
+==>If we create Object of sub class, we can access both super and sub class properties.
+=============================================================================================================================
+Types of Inheritance:
+---------------------
+
+==>Single Inheritance: One super class and One sub class.
+
+==>Multilevel Inheritance: Two super classes and Two sub classes.
+
+==>Hierarchical Inheritance: One super class and Two sub classes.
+
+==>Multiple Inheritance: Multiple inheritance is One class is inheriting two immediate super classes at the same time.
+
+==>Hybrid Inheritance is a combination of multiple inheritance and multilevel inheritance.
+It is a combination of Multiple and Hierarchical Inheritance since
+Multiple is not possible through classes. Hybrid is also not possible
+through classes.
+============================================================================================================================
+Why do we go for Overriding ??
+==>When subclass want the properties of super class but does not want the
+implementation of it. In such case, sub class can change implementation
+by means of Overriding.
+
+==========================================================================================================================
+Advantages of Inheritance :-
+1. Reusability of code
+2. Avoid duplicacy of code
+==========================================================================================================================
+Python Inheritance Rules
+1️⃣ We can inherit public and protected methods but private methods are not directly inherited.
+2️⃣ Private methods cannot be inherited because they are accessible only within the class (but can be accessed via name mangling).
+3️⃣ We can inherit non-static and abstract methods, but Python does not have final methods natively (can use @final).
+4️⃣ Static methods are not inherited automatically and must be explicitly called from the parent class.
+5️⃣ Constructors (__init__) are not inherited, but the parent constructor can be called using super().
+
+==========================================================================================================================

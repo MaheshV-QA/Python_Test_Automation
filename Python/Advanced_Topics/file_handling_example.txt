@@ -1,0 +1,24 @@
+
+File handling in Python refers to the process of creating, reading, writing, and manipulating files. Python provides built-in functions and methods to facilitate file operations, making it easy to work with files in various formats (e.g., text, binary). Below is an overview of file handling in Python along with code examples.
+
+Basic File Operations
+
+Opening a File: Use the open() function to open a file. You can specify the mode in which to open the file:
+
+'r': Read (default mode).
+'w': Write (creates a new file or truncates an existing file).
+'a': Append (adds to an existing file).
+'b': Binary mode.
+'t': Text mode (default).
+
+------>Reading from a File:
+
+read(): Reads the entire file.
+readline(): Reads the file line by line.
+readlines(): Reads all lines into a list.
+
+----->Writing to a File:
+
+write(): Writes a string to the file.
+writelines(): Writes a list of strings to the file.
+Closing a File: Use the close() method to close a file after completing the operations.

@@ -1,0 +1,32 @@
+Successful Responses (2xx):
+//200 OK: Indicates the request was successful.
+
+//201 Created: Indicates that the request has been fulfilled and resulted in a new resource being created.
+
+//204 No Content: Indicates that the server has successfully processed the request, but there is no content to return. 
+===============================================================================================================================================================
+Redirection Messages (3xx):
+301 Moved Permanently: Indicates that the resource has been permanently moved to a new location.
+302 Found: Indicates that the resource has been temporarily moved to a new location.
+304 Not Modified: Indicates that the resource has not been modified since the last request. 
+=========================================================================================================================================================
+Client Error Responses (4xx):
+400 Bad Request: Indicates that the server cannot process the request due to a client error, 
+    such as a malformed request or missing parameters. 
+
+401 Unauthorized: Indicates that the client needs to authenticate to access the resource. 
+403 Forbidden: Indicates that the client does not have permission to access the resource. 
+404 Not Found: Indicates that the requested resource could not be found. 
+405 Method Not Allowed: Indicates that the HTTP method used in the request is not allowed for the requested resource. 
+=========================================================================================================================================================
+Server Error Responses (5xx):
+500 Internal Server Error:
+Indicates that the server encountered an unexpected condition that prevented it from fulfilling the request. 
+501 Not Implemented:
+Indicates that the server does not support the functionality required to fulfill the request. 
+502 Bad Gateway:
+Indicates that the server received an invalid response from another server it was acting as a gateway or proxy for. 
+503 Service Unavailable:
+Indicates that the server is currently unavailable. 
+504 Gateway Timeout:
+Indicates that the server did not receive a response from another server it was acting as a gateway or proxy for within a specified amount of time

@@ -1,0 +1,406 @@
+Selenium testing:
+===> open -source tool and widely used for web applications
+
+1. selenium env setup
+2. System.setProperty("webdriver.chrome.driver","location of chrome driver")
+chromedriver driver=new chromedriver();---->
+
+WebDriverManager.chromedriver().setup();
+WebDriver driver=new ChromeDriver();
+
+3. diff webdriver and chrome driver
+ ChromeDriver- is a separate executable or a standalone server that 
+      Selenium WebDriver uses to launch Google Chrome. - chrome driver is class
+ WebDriver- refers to a collection of APIs used to automate the testing of web applications.
+       (webdriver contains findelmentsby, click, gettext) - webdriver is interface
+
+4. locators-id, name, class name, tagname, link text, partial link text, xpath, css selector
+
+5. abstract methods-get, navigate, gettitle,getcurrent url, getpagesource, find element, findelements,
+   switchto(), close, quit, manage(),getWindowHandle,getWindowHandles
+
+   difference b/w get and navigate
+   get- navigate to the particular url & Waits until the page loads completely
+
+   navigate- navigate to url and able to perform navigate back, forward and refresh
+   --Does not wait for full page load
+
+  driver.navigate().to(url);
+  driver.navigate.forward();
+  driver.navigate.back();
+  driver.navigate.refresh();
+
+6. difference between find elements and find element
+   find element-used to find single element from webbrowser==>web element==>nosuch element exception
+   find elements -used to find no of elements at a time from web browser==>list<web elements>==>timeout exception
+
+7. switchto - used to switch from page to page or page to window or window to page
+   driver.switchto.window.maximize();
+   driver.switchto.window.minimize();
+
+8. close() -closes only the current window on which Selenium is running automated tests.
+      The WebDriver session, however, remains active.
+   quit() -method closes all browser windows and ends the WebDriver session
+   manage -used to maximize windows and working with cookies
+
+9. operations for web elements-click, sendkeys, clear, gettext, gettagname, getlocation()x,y, isselected, isdisplayed,
+isenabled, get attribute
+isdisplayed -used to check whether the element is displayed or not
+isenabled -used to check whether the element is enabled or not 
+isselected -used to check whether the element is selected or not
+getlocation -used to get the location of the element in x and y coordinates   
+gettagname -used to get the tag name of the element
+getattribute -used to get the attribute of the element
+gettext -used to get the text of the element
+
+
+10. links, dropdowns-select by value, select by index, select by visible text, checkbox,
+   radiobutton, text field, img, screenshot
+
+
+
+11. synchronization-implicit wait, explicit wait, fluent wait(waits in selenium)
+   synchronization - to match the application speed and running script speed
+    ==>Matching the speed of Selenium with the speed of application, to avoid synchronisation issue is called Synchronization
+
+   Implicit wait -waits for an element to appear on the page,
+      driver.manage.timeouts.implicitlywait(duration.ofseconds(2000)) 
+      driver.manage.timeouts what is manage--manage is method
+      ==>NoSuchElementException/EmptyList
+
+   explicit wait -waits for a specific condition, such as the presence of an element or the element to be clickable. 
+      WebDriverWait wait = new WebDriverWait(driver,30);
+      wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'COMPOSE')]")));
+      ==>TimeoutException
+
+   Scope: Implicit wait applies globally, while explicit wait applies locally to a specific element
+
+	webdriverwait wait=new webdriverwait(driver,timuout)
+	wait wait=new flueentwait(driver)
+	.withTimeout(Duration.ofSeconds(SECONDS))
+	.PollingEvery(DURation.odSeconds(SECONDS))
+	.ignoring(Exception.class)
+
+fluent waits- fluent wait- polling wait every 5 secs(max time 30 sec)
+
+throw ==> exception  ==>using try,catch blockers
+throws  ==> exception ==> using throws keyword in method signature==> handling multiple exceptions
+throws IOException, SQLException, ClassNotFoundException
+   
+12. advanced user interactions - click, doubleclick, contextclick(rightclick), movetoelement, draganddropby(slider), draganddrop, sendkeys
+    how to scroll elements using xlocation and y location(draganddropby method in selenium)
+
+13. selenium components(flaours,versions)-ide, rc, webdriver, grid
+
+   ide -you can simply record your interactions with browser to create test cases
+   rc -It is a testing framework that enables a QA or a developer to write test cases in 
+       any programming language in order to automate UI tests for web applications against any HTTP
+   webdriver -WebDriver is a web framework that permits you to execute cross-browser tests. 
+              This tool is used for automating web-based application testing to verify that it performs expectedly
+   grid - Grid is a smart proxy server that makes it easy to run tests in parallel on multiple machines.
+
+Selenium Grid- Using Cloud Selenium Grid, you can use Selenium to test hundreds of browsers in parallel, thus saving time and effort
+Selenium IDE- It then generates the test script (of the automated tests) in programming languages like C#, Java, Python, and Ruby and Selenese
+Selenium WebDriver- The WebDriver proves to be better than Selenium IDE and Selenium RC in many aspects. It implements a more modern and stable approach in automating the browser's
+
+14. what is selenium 
+
+15. what is frame work in selenium
+- A framework is a set of guidelines or rules used to create and design test cases. 
+   It provides a structure for organizing test scripts, data, and other resources, making it easier to manage and maintain the test automation process.
+   Types of frameworks: Data-driven framework, Keyword-driven framework, Hybrid framework, Page Object Model (POM), Behavior Driven Development (BDD) framework
+
+16. can selenium be automate windows or desktop applications
+- No, Selenium cannot automate Windows or desktop applications. It is specifically designed for web applications and browser automation.
+   For automating Windows applications, you would typically use tools like AutoIt, Sikuli, or WinAppDriver.
+
+
+17. alerts-popup in guru 99
+   alert- is a small message box that displays information to the user.
+
+  simple alert-display information, 
+  prompt alert-user need to provide infomraion
+  confirmation alert-question confirmation alert
+
+  driver.SwitchTo().alert().aceept();
+  driver.SwitchTo().alert().dismiss();
+  driver.SwitchTo().alert().getText();
+  driver.SwitchTo().alert().Sendkeeys("a")
+
+18. window handling, open multiple windows how can you switch, method in windows handling
+switch between windows(swtich to 2nd and 3rd-get uniq id of 3rd window switch by using uniq id)
+
+driver.getWindowHandles() - returns the set of window handles of all open windows in the current session.
+returns a Set<String> of window handles.
+
+driver.getWindowHandle() - returns the window handle of the current window
+returns a String of alphanumeric characters.
+
+WebDriverManager.chromedriver().setup();
+WebDriver driver=new ChromeDriver();
+driver.get("https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager/5.5.3");
+JavascriptExecutor js=(JavascriptExecutor)driver;
+js.executeScript("window.open()");
+
+ArrayList<String> tabs=new ArrayList<String>(driver.getWindowHandles());
+System.out.println(tabs);
+driver.switchTo().window(tabs.get(1));
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
+driver.get("https://mail.google.com/");
+driver.switchTo().window(tabs.get(0));
+
+get window handles which return type- getWindowHandle() return type is string and driver. getWindowHandle() return a String of alphanumeric
+
+19. exceptions in selenium -ElementNotVisibleException, TimeoutException, NoAlertPresentException, NoSuchElementException,
+    NoSuchWindowException, NoSuchFrameException, StaleElementReferenceException- This exception occurs when the web element
+    is no longer part of the web page.
+ 
+20. DOM structure- is the properties, methods, and events for all HTML elements
+    The Document Object Model (DOM) is an application programming interface (API) for HTML and XML documents.
+
+22. which element is fastest to find elements in webpage- ID
+
+23. Allure reports:
+add allure testng dependency in pom.xml file
+create test cases for browser testing->convert it to testng->run the file->
+to generate allure reports->right click on project->go to allure project location->go to cmd prompt->enter "allure serve"
+
+24. Paraller testing
+25. Cross browser testing
+
+
+new topics in selenium:
+----------------------------------------
+1. how to write xpath in chrome for selenium - press ctrl+f
+2. types of xpaths-with ex - absolute xpath relative xpath()
+relative xpath types:
+//tagname[@attribute Name='attribute value']
+//tagname[text()='text value']
+//tagname[contains(text(), 'textvalue')]
+//tagname[starts-with(an='av')]
+//tagname[@an='av' or @an='av']
+XPath=//*[contains(@id,'Name')]
+
+axes methods in xpaths
+
+write xpath for login using or
+learn xpaths writing-xpaths in selenium
+
+how to write xpath for 2nd element(have 3 elements with same ID)
+//tag[@id='your_id'][2] --- by using index number
+
+3. types of testing for selenium
+
+4. what are broken links, how can we handle them
+Collect all the links present on a web page based on the <a> tag
+Send HTTP request for each link
+Verify the HTTP response code
+Determine if the link is valid or broken based on the HTTP response code
+Repeat the process for all links captured with the first step
+
+5. what are the blockers in selenium testing
+otp,bar codes, captcha
+
+6. return type of find elements method in selenium
+	return type of the findElements method is List<WebElement>
+7. without send keys how can we send data - java script executor
+
+8. how to read data from table in selenium
+
+9. how to switch to popups(we have 3 pop up in browser window)
+
+10. nosuchelement, element not found exception difference
+no such element-xpath will be matched and correct, but showing element is not found in dom - we can handle by explicit wait (xpath strategy is not correct)
+element not found- xpath is not correct
+
+11. stale element reference exception
+
+12. how to handle pop ups in selenium(how to handle popups get from different browsers)
+
+13. return type of sendkeys method
+
+14. how to handle frames and iframes in selenium
+iframes
+int size=driver.findElements(By.tagName("iframe")).size();
+int size=driver.fE(by,tagNmae("iframes")).size()
+
+15. if Xpath is correct but geteting error, how to identifying the error
+  Inspect Dynamic Content: If the content of the webpage is dynamically generated or loaded asynchronously, the element you are trying to locate might not be 
+  available at the time your XPath expression is evaluated. You may need to wait for the element to become visible or interactable before attempting to 
+  locate it. You can use explicit waits or other synchronization techniques 
+  provided by your automation framework (e.g., Selenium WebDriver).
+
+16. how to test colors in selenium
+
+17. exceptions in selenium
+TimeoutException, NoSuchElementException, ElementNotVisibleException, StaleElementReferenceException, WebDriverException, ElementNotInteractableException, UnhandledAlertException
+
+===========================================================
+
+TestNG
+
+1. testNG- Annootations in testng - STCMT(stateCM)
+testng annotations, grouping, priority, innovation count(how many times), data provider(annotation)
+STCM- @beforeSuite, @beforetest, @beforeclass, @beforemethod, @test,
+      @aftermethod, @afterclass, @aftertest, @aftersuite
+
+2. we have 50 test cases executed using testng 20 passed 30 failed, how can we execute remaining 30 test cases
+once execution done, In test ng framework - go to the testoutput folder->open testngfailed.xml file then run it(after fixed the issues got confirmation from developer)
+
+3. Assertions in selenium java (assert.equals(actual, expected), assert.notequals, assert.true(condition), assrt.false, assert.null, assert.notnull)
+
+what assertions used in your project- hard assertions we have used
+
+Hard Asserts vs Soft Asserts
+Hard Assertions                                                 	  Soft Assertions
+Test Execution will be aborted if the assert condition is not met	  Test execution will continue till the end of the test case even if the assert condition is not met
+Does not have to invoke any methods to capture the assertions	        To view assertions result at the end of the test, the tester has to invoke assertAll()
+
+4. testng annotations
+In test ng, we have 10 test cases- how can we run 5th test case 10 times
+
+==>parameters
+->Group==>grouping
+->Priority=>
+->enabled or disbled
+->dependency
+->invocation count
+->depends on method
+->data provider
+->testng.xml file
+
+====================================================
+
+programs in selenium:
+1. screenshot capturing
+2. how to download file from browser using selenium
+3. how to handle multiple frames(write program)
+4. program to lanch amazon site, search for samsum mobiles then list out the mobile with price using hash map
+In flipcart page - have t and c find out xpath wituput using index - we have 4 t and c - highlight only 2nd item
+
+=================================================================
+
+
+1. we have scenario of login amazon site and added elements if cart then find out integration testing and security testing
+Integration Testing: Login Integration Testing, Cart Integration Testing
+Security Testing: Authentication Testing, Authorization Testing, Session Security Testing: Test the security of user sessions, including session hijacking and session 
+fixation vulnerabilities
+
+==========================================================================
+
+
+1. switch to frames(frames handling)
+2. no such element exception, stale element reference exception
+Incorrect Locator Strategy: If the locator strategy you're using to find the element (such as ID, CSS selector, XPath, etc.) 
+is incorrect or doesn't match any elements on the page, Selenium will throw a NoSuchElementException. 
+Double-check your locators to ensure they accurately identify the desired element.
+
+3. iframes and main frames
+4. how to download file
+
+============================================
+
+handling tables in selenium java
+WebDriver driver = new ChromeDriver();
+
+        // Navigate to the web page containing the table
+        driver.get("http://www.example.com/page_with_table");
+
+        // Find the table element by its ID
+        WebElement table = driver.findElement(By.id("example_table"));
+
+        // Find all the rows in the table
+       List<WebElement> rows = table.findElements(By.tagName("tr"));
+
+        // Iterate over the rows
+        for (WebElement row : rows) {
+            // Find all the columns in each row
+            List<WebElement> columns = row.findElements(By.tagName("td"));
+
+            // Iterate over the columns
+            for (WebElement column : columns) {
+                // Print the text of each column
+                System.out.print(column.getText() + "\t");
+            }
+            // Move to the next line after printing all columns of a row
+            System.out.println();
+
+=============================================================================
+
+In Selenium with Java, several exceptions can occur during test execution. Here's the difference between some of the commonly encountered exceptions:
+NoSuchElementException:
+This exception occurs when WebDriver is unable to locate an element in the DOM.
+It's thrown when you attempt to find an element using a locator (like ID, class name, XPath, etc.) that doesn't exist in the current context.
+
+Example:
+WebElement element = driver.findElement(By.id("nonExistentID"));
+
+NoSuchWindowException:
+This exception occurs when WebDriver tries to operate on a window that is not available or has been closed.
+It's thrown when you attempt to switch to a window that doesn't exist.
+Example:
+driver.switchTo().window("nonExistentWindowHandle");
+
+NoSuchFrameException:
+This exception occurs when WebDriver tries to switch to a frame that doesn't exist or is unavailable.
+It's thrown when you attempt to switch to a frame that is not present on the page.
+Example:
+driver.switchTo().frame("nonExistentFrame");
+
+StaleElementReferenceException:
+This exception occurs when a previously located element is no longer attached to the DOM.
+It usually happens when the DOM is refreshed, and the previously located element becomes stale or invalid.
+Example:
+WebElement element = driver.findElement(By.id("someId"));
+// DOM is refreshed or the element is modified
+element.click(); // This may throw StaleElementReferenceException
+
+TimeoutException:
+This exception occurs when a command cannot be completed in the specified amount of time.
+It's thrown when WebDriver waits for an element or condition to be available within a certain timeout but fails to find it.
+Example (using WebDriverWait):
+WebDriverWait wait = new WebDriverWait(driver, 10);
+WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("elementID")));
+
+In summary, NoSuchElementException occurs when an element cannot be found, NoSuchWindowException and NoSuchFrameException occur when WebDriver tries to 
+operate on a window or frame that doesn't exist, StaleElementReferenceException occurs when an element reference becomes stale, and TimeoutException occurs 
+when WebDriver fails to find an element or condition within a specified timeout.
+
+==========================================================================================
+
+In Selenium WebDriver, there are mainly three types of waits commonly used in Java:
+Implicit Wait:
+Implicit wait is a setting that tells the WebDriver to wait for a certain amount of time before throwing a NoSuchElementException.
+It is set once and applied throughout the life of the WebDriver instance.
+It's applied globally to all elements that WebDriver interacts with.
+It's useful for managing the time between each command when there's a delay in loading elements.
+
+Syntax in Java:
+driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+Explicit Wait:
+Explicit wait is used to halt the execution until a certain condition is met or the maximum time has elapsed.
+It is applied to a specific element or a condition using WebDriverWait and ExpectedConditions.
+It allows WebDriver to wait for an element to meet certain conditions (like visibility, presence, etc.) before performing any action.
+
+Syntax in Java:
+WebDriverWait wait = new WebDriverWait(driver, 10);
+WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("elementID")));
+
+Fluent Wait:
+Fluent wait is another type of explicit wait that allows more flexibility in defining the wait conditions.
+It provides the ability to specify polling interval, timeout, and to ignore specific exceptions during the wait.
+It's useful when dealing with dynamic content where the expected condition may take variable time to fulfill.
+
+Syntax in Java:
+Wait<WebDriver> wait = new FluentWait<>(driver)
+    .withTimeout(Duration.ofSeconds(30))
+    .pollingEvery(Duration.ofSeconds(5))
+    .ignoring(NoSuchElementException.class);
+WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("elementID")));
+
+In summary, implicit wait waits for elements globally, explicit wait waits for a specific condition on a particular element, 
+and fluent wait provides more flexibility in defining wait conditions with additional options like polling interval and ignoring exceptions. 
+Each type of wait has its use cases depending on the scenario you are dealing with in your test automation.
+
+==============================================================================

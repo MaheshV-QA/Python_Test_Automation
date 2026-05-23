@@ -1,0 +1,31 @@
+Api methods:
+GET: Used to retrieve data or resources from an API.
+POST: Used to create new data or resources on an API.
+PUT: Used to update existing data or resources on an API.
+DELETE: Used to delete data or resources from an API.
+PATCH: Used to update existing data or resources on an API partially.
+-----------------------------------------------------------------------------------
+API END point-->An API endpoint refers to a specific URL or URI (Uniform Resource Identifier)
+   that represents a unique resource or service provided by an API. 
+   It acts as a point of interaction for clients to send requests and receive responses from an API. 
+---------------------------------------------------------------------------------------
+HTTP Status codes:
+   The purpose of HTTP status codes in API testing is to indicate the outcome of an API request. 
+    Status codes are three-digit numbers included in the response message from the server 
+    to provide information about the result of the request.
+
+1.200 OK: Request was successful, and the server returned the requested data.
+2.201 Created: Request was successful, and a resource was created.
+204 No Content: The request was successful, but the server has no content to return
+3.400 Bad Request: The server cannot process the request due to client-side errors.
+4.401 Unauthorized: Authentication is required and has failed or not been provided.
+5.403 Forbidden: The server refuses to authorize the request due to insufficient permissions.
+6.404 Not Found: The requested resource could not be found on the server.
+7.405 Method Not Allowed: The HTTP method used is not allowed for the resource.
+8.500 Internal Server Error: The server encountered an unexpected condition preventing it from fulfilling the request.
+9.502 Bad Gateway: The server received an invalid response from the upstream server.
+10.503 Service Unavailable: The server is temporarily unavailable, typically due to overload or maintenance.
+
+------------------------------------------------------------------------------------------------------
+Headers in API testing play a significant role in controlling and
+ managing the behavior of API requests and responses.  
